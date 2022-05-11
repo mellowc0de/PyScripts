@@ -17,3 +17,16 @@ def skip_elements(elements):
 print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
 print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
 print(skip_elements([])) # Should be []
+
+# Skip elements using enumerate
+def skip_other_elements(elements):
+  other_list =[]
+  i = 0
+  for i, elem in enumerate(elements):
+    if i % 2 == 0:
+      other_list.append(elem)
+  
+    return other_list
+
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
