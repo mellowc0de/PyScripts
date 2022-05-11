@@ -1,3 +1,5 @@
+text = input('Enter text: ')
+
 def count_letters(text):
   result = {}
   for letter in text:
@@ -5,3 +7,6 @@ def count_letters(text):
       result[letter] = 0
     result[letter] += 1
   return result
+
+
+print(count_letters(text))
