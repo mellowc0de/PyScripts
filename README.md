@@ -1,5 +1,6 @@
 # Python Scripts
  All projects, excercises, and templates using python
- - Automation Code
- - Calculations Code
+ - Compute Scripts
+ - GUI Scripts
+ - System Scripts
  - Django Templates
