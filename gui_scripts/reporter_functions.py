@@ -1,15 +1,17 @@
-class Datacenter(object):
+class Datacenter():
+    dc_list=[]
+    
     def __init__(self,*kwargs):
         self.name=input("Add DC name: ");
         self.state=input("Add DC state: ");
         self.city=input("Add DC city: ");
-        
-    def dcList(self):
-        dc_list=[]
-        dc_list.append(self.name)
-        return(dc_list)
+
+    def add_dc(self):
+        dc.dc_list.append(self.name)
+        return(dc.dc_list)
     
 
-newDC=Datacenter()
+dc = Datacenter()
 
-print(newDC.dcList())
+
+print(dc.add)
