@@ -1,10 +1,10 @@
-class Datacenter():
+class Datacenter:
     dc_list=[]
     
     def __init__(self,*kwargs):
-        self.name=input("Add DC name: ");
-        self.state=input("Add DC state: ");
-        self.city=input("Add DC city: ");
+        self.name=input("Add DC name: ").upper();
+        self.state=input("Add DC state: ").upper();
+        self.city=input("Add DC city: ").upper();
 
     def add_dc(self):
         dc.dc_list.append(self.name)
@@ -14,4 +14,4 @@ class Datacenter():
 dc = Datacenter()
 
 
-print(dc.add)
+print(dc.add_dc())
