@@ -1,4 +1,4 @@
-class Datacenter:    
+class createDatacenter:    
     def __init__(self):
         """Initialize the Datacenter class. Input data for DC name, state, 
         city, manager, and pod count.
@@ -9,8 +9,9 @@ class Datacenter:
         self.manager=input("Add DC manager: ").upper();
         self.pods=int(input("How many PODs?  "));  # type: ignore
         self.rows=int(input("How many ROWs in the DC?  "));  # type: ignore
+        self.racks=int(input("How many Racks in the DC?  "));  # type: ignore
         
-    def dc_pods(self):
+    def create_dc_pods(self):
         """Uses self.pods integer as the dc pod count as well as to form 
         the names that are appended to dc_pod_list
         """
@@ -25,14 +26,14 @@ class Datacenter:
                     pod_int = "POD" + str(pod_int)
                     dc_pod_list.append(pod_int)
                     
-                    print(dc_pod_list) # print statement for testing purposes
+                    #print(dc_pod_list) # print statement for testing purposes
             else:
                 print("not a valid number")
 
         except TypeError:
             print("Input must be an integer")
     
-    def dc_rows(self):
+    def create_dc_rows(self):
         """Uses self.rows to determine the total number of rows in the Datacenter.
         """
         dc_rows_count = self.rows
@@ -46,20 +47,50 @@ class Datacenter:
                     row_int = "ROW" + str(row_int)
                     dc_rows_list.append(row_int)
                     
-                    print(dc_rows_list) # print statement for testing purposes
+                    #print(dc_rows_list) # print statement for testing purposes
             else:
                 print("not a valid number")
 
         except TypeError:
             print("Input must be an integer")
     
-    def pod(self):
+    def create_dc_racks(self):
         """Defines the PODs and their respective rows in the Datacenter
         """
+        dc_racks_count = self.racks
         
-      
-dc = Datacenter()
+        try:
+            if type(dc_racks_count) is int:
+                # DC POD List collects pod names from data input of self.pods
+                dc_racks_list = []
+                
+                for rack_int in (n+1 for n in range(dc_racks_count)):
+                    rack_int = "RACK" + str(rack_int)
+                    dc_racks_list.append(rack_int)
+                    
+                    #print(dc_racks_list) # print statement for testing purposes
+            else:
+                print("not a valid number")
 
+        except TypeError:
+            print("Input must be an integer")
+    
+    def dc_info(self, *args,**kwargs):
+        """Prints all the information collected and processed within createDatacenter class"""
+        dc_info_txt = "Datacenter:  {} \nCity:  {} \nState:  {} \nManager:  {} \nPODs:  {} \nRows:  {} \nRacks:  {}".format(self.name, self.city, self.state, self.manager, self.pods, self.rows, self.racks)
+        
+        print(dc_info_txt)
+ 
+      
+dc = createDatacenter()
+
+
+ 
+print("----------------------------------------------------------------")
 print(dc)
-print(dc.dc_pods())
-print(dc.dc_rows())
+#print(dc.create_dc_pods())  # print statement for testing purposes
+#print(dc.create_dc_rows())  # print statement for testing purposes
+#print(dc.create_dc_racks())  # print statement for testing purposes
+print("----------------------------------------------------------------")
+print(dc.dc_info())
+print("----------------------------------------------------------------")
