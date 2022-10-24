@@ -1,33 +1,5 @@
 #!/usr/bin/env python
 
-# This file is an example of multiple inheritance
-# To view the code run the python interactive shell
-#  enter the the following:
-# >>> from oop_practice import *
-# Add DC name:  sjc03
-# Add DC state:  ca
-# Add DC city:  santa clara
-# Add DC manager: ricky
-# How many PODs?  2
-# How many ROWs in the DC?  60
-# How many Racks in the DC?  660
-# ----------------------------------------------------------------
-# <oop_practice.addDatacenter object at 0x000001326A4AA410>
-# ----------------------------------------------------------------
-# Datacenter:  SJC03
-# City:  SANTA CLARA
-# State:  CA
-# Manager:  RICKY
-# PODs:  2
-# Rows:  60
-# Racks:  660
-# None
-# ----------------------------------------------------------------
-# >>> 
-# Output: 
-# >>> 
-# Output: 
-
 class addDatacenter:    
     def __init__(self):
         """Initialize the Datacenter class. Input data for DC name, state, 
