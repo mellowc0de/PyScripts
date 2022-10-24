@@ -1,4 +1,34 @@
-class createDatacenter:    
+#!/usr/bin/env python
+
+# This file is an example of multiple inheritance
+# To view the code run the python interactive shell
+#  enter the the following:
+# >>> from oop_practice import *
+# Add DC name:  sjc03
+# Add DC state:  ca
+# Add DC city:  santa clara
+# Add DC manager: ricky
+# How many PODs?  2
+# How many ROWs in the DC?  60
+# How many Racks in the DC?  660
+# ----------------------------------------------------------------
+# <oop_practice.addDatacenter object at 0x000001326A4AA410>
+# ----------------------------------------------------------------
+# Datacenter:  SJC03
+# City:  SANTA CLARA
+# State:  CA
+# Manager:  RICKY
+# PODs:  2
+# Rows:  60
+# Racks:  660
+# None
+# ----------------------------------------------------------------
+# >>> 
+# Output: 
+# >>> 
+# Output: 
+
+class addDatacenter:    
     def __init__(self):
         """Initialize the Datacenter class. Input data for DC name, state, 
         city, manager, and pod count.
@@ -26,7 +56,7 @@ class createDatacenter:
                     pod_int = "POD" + str(pod_int)
                     dc_pod_list.append(pod_int)
                     
-                    #print(dc_pod_list) # print statement for testing purposes
+                    print(dc_pod_list) # print statement for testing purposes
             else:
                 print("not a valid number")
 
@@ -75,14 +105,14 @@ class createDatacenter:
         except TypeError:
             print("Input must be an integer")
     
-    def dc_info(self, *args,**kwargs):
+    def dc_info(self):
         """Prints all the information collected and processed within createDatacenter class"""
         dc_info_txt = "Datacenter:  {} \nCity:  {} \nState:  {} \nManager:  {} \nPODs:  {} \nRows:  {} \nRacks:  {}".format(self.name, self.city, self.state, self.manager, self.pods, self.rows, self.racks)
         
         print(dc_info_txt)
  
       
-dc = createDatacenter()
+dc = addDatacenter()
 
 
  
