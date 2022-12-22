@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+import pyinputplus as pyip # for data validations
+
 # This file is an example of multiple inheritance
 # To view the code run the python interactive shell
 #  enter the the following:
@@ -33,13 +35,13 @@ class addDatacenter:
         """Initialize the Datacenter class. Input data for DC name, state, 
         city, manager, and pod count.
         """
-        self.name=input("Add DC name:  ").upper();
-        self.state=input("Add DC state:  ").upper();
-        self.city=input("Add DC city:  ").upper();
-        self.manager=input("Add DC manager: ").upper();
-        self.pods=int(input("How many PODs?  "));  # type: ignore
-        self.rows=int(input("How many ROWs in the DC?  "));  # type: ignore
-        self.racks=int(input("How many Racks in the DC?  "));  # type: ignore
+        self.name=pyip.inputStr('Add DC name:  ').upper();
+        self.state=pyip.inputStr("Add DC state:  ").upper();
+        self.city=pyip.inputStr("Add DC city:  ").upper();
+        self.manager=pyip.inputStr("Add DC manager: ").upper();
+        self.pods=pyip.inputNum("How many PODs?  ", min=1, max=15); 
+        self.rows=pyip.inputNum("How many ROWs in the DC?  ");  
+        self.racks=pyip.inputNum("How many Racks in the DC?  ");  
         
     def create_dc_pods(self):
         """Uses self.pods integer as the dc pod count as well as to form 
@@ -105,11 +107,21 @@ class addDatacenter:
         except TypeError:
             print("Input must be an integer")
     
+    def racks_in_row(self, dc_pod_count):
+        '''Function that associates the count of racks in a row'''
+        pod_list = []
+        
+        for pod in dc_pod_count:
+            pod_list.append(pod)
+
+        print(pod_list)
+    
     def dc_info(self):
         """Prints all the information collected and processed within createDatacenter class"""
         dc_info_txt = "Datacenter:  {} \nCity:  {} \nState:  {} \nManager:  {} \nPODs:  {} \nRows:  {} \nRacks:  {}".format(self.name, self.city, self.state, self.manager, self.pods, self.rows, self.racks)
         
         print(dc_info_txt)
+        
  
       
 dc = addDatacenter()
