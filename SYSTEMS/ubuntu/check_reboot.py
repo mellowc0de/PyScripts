@@ -12,7 +12,7 @@ print("STDERR: ", result.stderr)
 print(result)
 
 if result.returncode == 0:
-  subprocess.run(["sudo reboot"], shell=True)
+    subprocess.run(["sudo reboot"], shell=True)
 else:
-  subprocess.run(["sleep 5"], shell=True)  
-  print("No Reboot Required")
+    subprocess.run(["sleep 5"], shell=True)  
+    print("No Reboot Required")
